@@ -15,26 +15,6 @@ function password_show_hide(pass,eye1,eye2) {
     hide_eye.style.display = "none";
   }
 }
-/*********************************************** Email Validation ************************************************************/
-function isValidEmailAddress() {
-	var emailAddress = $("#Email_ID").val();
-    if(emailAddress != "" && emailAddress != null && emailAddress != undefined)
-    	{
-    	
-    if(pattern.test(emailAddress))
-    	{
-    	$("#emailalert2").css("display","none");
-    	}
-    else
-    	{
-    	$("#emailalert2").css("display","block");
-    	}
-    	}
-    else
-    	{
-    	$("#emailalert2").css("display","none");
-    	}
-}
 /*************************** Save Login Credentials *******************************************************/
 function submitform(){
 	disabledalerts();
@@ -45,10 +25,6 @@ function submitform(){
 	if(Email_ID == "" || Email_ID == null || Email_ID == undefined)
 	{
 	$("#emailalert1").css("display","block");
-	}
-	else  if(!pattern.test(Email_ID))
-	{
-	$("#emailalert2").css("display","block");
 	}
 	else if(mailcheckval == "Exists")
 		{

@@ -29,11 +29,11 @@ public class DBCON {
 			String db_port = resource.getString("db_port");
 			System.out.println("Server : " + db_server + "," + db_port + "database: " + db_database + "username: "
 					+ db_username + "password: " + db_password + "");
-			// FileInputStream in = new FileInputStream(f);
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String url_new = "jdbc:sqlserver://" + db_server + ":" + db_port + ";database=" + db_database
-					+ ";integratedSecurity=false";
-			con = DriverManager.getConnection(url_new, db_username, db_password);
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			con =  DriverManager.getConnection("jdbc:mysql://"+db_server+":"+db_port+"/"+db_database+"?user="+db_username+"&password="+db_password+"");
+			 
 			if (con != null) {
 				System.out.println("Connection Created");
 			} else {

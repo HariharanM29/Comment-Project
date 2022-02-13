@@ -60,7 +60,7 @@ public class Usersignup extends HttpServlet {
 			con.connec();
 			con.setAutoCommit(false);
 			
-			String userqry = "Select convert(varchar(10),(ISNULL(FORMAT (max((convert(int,substring(User_ID,charindex('-',User_ID) +1,10)) + 1)), 'USR-000000'),'USR-000001'))) 'NewUserCode' from UserDetails";
+			String userqry = " Select ISNULL(MAX(CONVERT(User_ID,int)) + 1) 'NewUserCode' from UserDetails;";
 			ResultSet REs = con.executeQuery(userqry);
 			
 			if(REs.next())
@@ -68,7 +68,7 @@ public class Usersignup extends HttpServlet {
 				String NewUserCode = REs.getString("NewUserCode");
 				
 			String insertqry = "insert into UserDetails(User_ID,EmailID,SecretCode,Password,ActiveStatus,CreatedDate)"
-					+ "values('"+NewUserCode+"','"+Email_ID+"','"+secretcode+"','"+Password+"','Active',getdate())";
+					+ "values('"+NewUserCode+"','"+Email_ID+"','"+secretcode+"','"+Password+"','Active',NOW())";
 			status = con.indel(insertqry);
 			
 			if(status > 0)

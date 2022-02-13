@@ -62,7 +62,7 @@ public class Savecomments extends HttpServlet {
 			con.setAutoCommit(false);
 			
 			String insertqry = "insert into UserComments(User_ID,Comments,ActiveStatus,CreatedDate)\r\n" + 
-					"values('"+UserCode+"','"+comments+"','Active',getdate())";
+					"values('"+UserCode+"','"+comments+"','Active',NOW())";
 			status = con.indel(insertqry);
 			
 			String qry = "select * from UserComments";
