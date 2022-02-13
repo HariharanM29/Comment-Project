@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Comment Project || Sign In</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<style>
+        body{
+           	font-family: 'Roboto Slab', serif;
+        }
+        .card{
+           box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+           transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+           padding:10px;
+           position: relative;
+           height:100%;            
+        }
+        .con{
+        max-width: fit-content; 
+       	left: 50%;
+    	top: 50%;
+    	position: absolute;
+    	transform: translate(-50%, -50%);         
+      }
+      table
+      {
+      width: 100%;
+    text-align: center;
+      }
+</style>
+<body>
+
+ <div class="container-fluid">
+ <div class="container con">
+ <div class="row" style="margin:0px;">
+ <div class="card">
+  <div class="row">
+  <div class="col-md-10 h4 text-center">
+                        <strong>Comments</strong>
+                        </div>
+                        <div class="col-md-2 text-right">
+                        <i class="fa fa-sign-out" id="logout"></i>
+                        </div>
+                    </div>
+                    
+ 			<div class="row m-0 mt-3">
+                        <div class="col">
+                        <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+              </div>
+              <textarea class="input form-control" id="comments" name="comments" placeholder="Write Comments" 
+              aria-label="Comments" aria-describedby="basic-addon1" style="resize: none;height:100px !important;" onkeypress="disabledalerts();"
+              required></textarea>
+            </div>
+            <div style="color:red;display:none;text-align: center;" id="textalert1">Please Enter Comment</div>
+                        
+                        </div>
+                        </div>   
+                        <div class="row m-0 mt-1" style="justify-content: center;">
+                            <div style="color:red;display:none;text-align: center;" id="failalert1">User Comments Not Found</div>
+                        <div style="color:green;display:none;text-align: center;" id="successalert1">User Comments Saved</div>
+                        <div style="color:red;display:none;text-align: center;" id="successalert2">User Comments Not Saved</div>
+                        </div>                    
+                     <div class="row m-0 mt-1">
+                     <div class="col">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-lg btn-block active" id="savecomm" onclick="Savecomments();">Submit
+  									<div class="spinner-border float-right" role="status" id="spinner1" style="display:none;"></div>
+                                </button>
+                      </div></div>
+                      </div>
+                       
+
+                    <div class="row m-0">
+                    <div class="col">
+                    <h5>Comments</h5>
+                    </div>
+                    <div class="col">          
+                                <button type="button" class="btn btn-primary btn-lg btn-block active" id="filtercomm" onclick="Filtercomments('User');">Filter
+  									<div class="spinner-border float-right" role="status" id="spinner2" style="display:none;"></div>
+                                </button>
+                            </div>
+                    </div>
+                    <div class="row m-0 mt-1">
+                        <div class="col" style="height:200px;overflow-y:auto;">
+                            <table>
+                            <thead>
+                            <tr><th></th><th></th></tr>
+                            </thead>
+                            <tbody id="commentssec">
+                             <tr><td colspan='2'>No Comments</td></tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>                  
+                    
+</div>                    
+ </div>
+ </div>
+ </div>
+<script src="../JS/Comments.js"></script>
+<script src="../JS/Projectpath.js"></script>
+</body>
+</html>

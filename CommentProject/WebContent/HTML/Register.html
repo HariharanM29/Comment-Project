@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Comment Project || Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<style>
+        body{
+           	font-family: 'Roboto Slab', serif;
+        }
+        .card{
+           box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+           transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+           padding:10px;
+           position: relative;
+           height:100%;            
+        }
+        .con{
+        max-width: fit-content; 
+       	left: 50%;
+    	top: 50%;
+    	position: absolute;
+    	transform: translate(-50%, -50%);         
+      }
+</style>
+<body>
+
+ <div class="container-fluid">
+ <div class="container con">
+ <div class="row" style="margin:0px;">
+ <div class="card">
+  <div class="h4 text-center">
+                        <strong>Sign Up</strong>
+                    </div>
+
+
+<div class="row m-0 mt-3 text-center">
+<span class="ml-2">Already have an account?</span><a class="ml-1" href="../HTML/LoginPage.html">Sign In</a> 
+</div>
+<!-- <form class="needs-validation" id="loginform" method="post" enctype="multipart/form-data" autocomplete="off" novalidate> -->
+
+ 			<div class="row m-0 mt-3">
+                        <div class="col">
+                        <div class="input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+              </div>
+              <input name="username" type="text" class="input form-control" id="Email_ID" name="Email_ID" placeholder="Email ID" 
+              aria-label="Username" aria-describedby="basic-addon1" onkeypress="disabledalerts();"  onkeyup="isValidEmailAddress();" 
+              onchange="Mailchecking();" required>
+            </div>
+            <div style="color:red;display:none;" id="emailalert1">Please Enter Email</div>
+            <div style="color:red;display:none;" id="emailalert2">Enter Valid Email</div>
+            <div style="color:red;display:none;" id="emailalert3">Email ID Already Taken</div>
+                        </div>
+                        </div>
+ 			<div class="row m-0">
+                        <div class="col">
+                        <div class="input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+              </div>
+              <input type="password" class="input form-control" id="Password" name="Password" placeholder="password" 
+              onkeypress="disabledalerts();" required aria-label="password" aria-describedby="basic-addon1">
+              <div class="input-group-append">
+                <span class="input-group-text" onclick="password_show_hide('Password','show_eye1','hide_eye1');">
+                  <i class="fa fa-eye" id="show_eye1"></i>
+                  <i class="fa fa-eye-slash d-none" id="hide_eye1"></i>
+                </span>
+              </div>
+            </div>
+            <div style="color:red;display:none;" id="passwordalert1">Please Enter Password</div>
+              </div>
+                </div>   
+                <div class="row m-0">
+                        <div class="col">
+                        <div class="input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+              </div>
+              <input type="password" class="input form-control" id="secretcode" name="secretcode" placeholder="Secret Code"
+              onkeypress="disabledalerts();" required aria-label="password" aria-describedby="basic-addon1">
+              <div class="input-group-append">
+                <span class="input-group-text" onclick="password_show_hide('secretcode','show_eye2','hide_eye2');">
+                  <i class="fa fa-eye" id="show_eye2"></i>
+                  <i class="fa fa-eye-slash d-none" id="hide_eye2"></i>
+                </span>
+              </div>
+            </div>
+            <div style="color:red;display:none;" id="Codealert1">Please Enter Secret Code</div>
+              </div>
+                </div> 
+                    <div class="row m-0">
+                        <div class="col">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-lg btn-block active" id="signin" onclick="submitform();">Sign Up
+  									<div class="spinner-border float-right" role="status" id="spinner" style="display:none;"></div>
+                                </button>
+                            </div>
+                            <div style="color:red;display:none;text-align: center;" id="failalert1">Something Went Wrong</div>
+                            <div style="color:green;display:none;text-align: center;" id="failalert2">Process Completed</div>
+                        </div>
+                    </div>                  
+              <input type="hidden" id="mailcheckval">      
+</div>                    
+ </div>
+ </div>
+ </div>
+<script src="../JS/Projectpath.js"></script>
+<script src="../JS/Signup.js"></script>
+</body>
+</html>
