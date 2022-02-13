@@ -30,3 +30,4 @@ Here I have Create Page Design and Functional with.
   4. To test Suggest to export the project files as a war file and move the war file to Tomcat Server.
 
 
+Here I add the database backup file (.bak) also for the creation of the database and table. 
